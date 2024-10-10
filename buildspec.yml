@@ -1,0 +1,11 @@
+version: 0.2
+
+phases:
+  build:
+    commands:
+      # Deploy the First Lambda Funtion
+      - echo "Deploying First Lambda Funtion..."
+      - aws cloudformation deploy \
+          --template-file vpc.yml \
+          --stack-name VPCStack \
+          --capabilities CAPABILITY_NAMED_IAM
