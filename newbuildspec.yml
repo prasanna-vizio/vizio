@@ -1,0 +1,100 @@
+version: 0.2
+
+phases:
+  build:
+    commands:
+      # Deploy Lambda Function lambda-aro-approve-obligation
+      - echo "Deploy Lambda Function lambda-aro-approve-obligation ..."
+      - aws cloudformation deploy --template-file lambda-aro-approve-obligation.yaml --stack-name lambda-aro-approve-obligation --capabilities CAPABILITY_NAMED_IAM
+      
+      # Deploy Lambda Function lambda-aro-create-reverse-entry
+      - echo "Deploy Lambda Function lambda-aro-create-reverse-entry ..."
+      - aws cloudformation deploy --template-file lambda-aro-create-reverse-entry.yaml --stack-name lambda-aro-create-reverse-entry --capabilities CAPABILITY_NAMED_IAM      
+
+      # Deploy Lambda Function lambda-aro-curd-events
+      - echo "Deploy Lambda Function lambda-aro-curd-events ..."
+      - aws cloudformation deploy --template-file lambda-aro-curd-events.yaml --stack-name lambda-aro-curd-events --capabilities CAPABILITY_NAMED_IAM
+
+      # Deploy Lambda Function lambda-aro-curd-tasks
+      - echo "Deploy Lambda Function lambda-aro-curd-tasks ..."
+      - aws cloudformation deploy --template-file lambda-aro-curd-tasks.yaml --stack-name lambda-aro-curd-tasks--capabilities CAPABILITY_NAMED_IAM
+
+      # Deploy Lambda Function lambda-aro-generate-accretion-schedule
+      - echo "Deploy Lambda Function lambda-aro-generate-accretion-schedule ..."
+      - aws cloudformation deploy --template-file lambda-aro-generate-accretion-schedule.yaml --stack-name lambda-aro-generate-accretion-schedule --capabilities CAPABILITY_NAMED_IAM
+
+      # Deploy Lambda Function lambda-aro-generate-fiscal-year-schedule
+      - echo "Deploy Lambda Function lambda-aro-generate-fiscal-year-schedule ..."
+      - aws cloudformation deploy --template-file lambda-aro-generate-fiscal-year-schedule.yaml --stack-name lambda-aro-generate-fiscal-year-schedule --capabilities CAPABILITY_NAMED_IAM
+
+      # Deploy Lambda Function lambda-aro-generate-obligation-cash-flow
+      - echo "Deploy Lambda Function lambda-aro-generate-obligation-cash-flow ..."
+      - aws cloudformation deploy --template-file lambda-aro-generate-obligation-cash-flow.yaml --stack-name lambda-aro-generate-obligation-cash-flow--capabilities CAPABILITY_NAMED_IAM
+
+      # Deploy Lambda Function lambda-aro-generate-obligation-future-value
+      - echo "Deploy Lambda Function lambda-aro-generate-obligation-future-value ..."
+      - aws cloudformation deploy --template-file lambda-aro-generate-obligation-future-value.yaml --stack-name lambda-aro-generate-obligation-future-value --capabilities CAPABILITY_NAMED_IAM
+
+      # Deploy Lambda Function lambda-aro-generate-obligation-present-value
+      - echo "Deploy Lambda Function lambda-aro-generate-obligation-present-value ..."
+      - aws cloudformation deploy --template-file lambda-aro-generate-obligation-present-value.yaml --stack-name lambda-aro-generate-obligation-present-value --capabilities CAPABILITY_NAMED_IAM
+
+      # Deploy Lambda Function lambda-aro-get-all-events
+      - echo "Deploy Lambda Function lambda-aro-get-all-events..."
+      - aws cloudformation deploy --template-file lambda-aro-get-all-events.yaml --stack-name lambda-aro-get-all-events --capabilities CAPABILITY_NAMED_IAM
+
+      # Deploy Lambda Function lambda-aro-get-all-tasks
+      - echo "Deploy Lambda Function lambda-aro-get-all-tasks ..."
+      - aws cloudformation deploy --template-file lambda-aro-get-all-tasks.yaml --stack-name lambda-aro-get-all-tasks --capabilities CAPABILITY_NAMED_IAM
+
+      # Deploy Lambda Function lambda-aro-get-basic-information
+      - echo "Deploy Lambda Function lambda-aro-get-basic-information ..."
+      - aws cloudformation deploy --template-file lambda-aro-get-basic-information.yaml --stack-name lambda-aro-get-basic-information --capabilities CAPABILITY_NAMED_IAM
+
+      # Deploy Lambda Function lambda-aro-get-document-number
+      - echo "Deploy Lambda Function lambda-aro-get-document-number ..."
+      - aws cloudformation deploy --template-file lambda-aro-get-document-number.yaml --stack-name lambda-aro-get-document-number --capabilities CAPABILITY_NAMED_IAM
+
+      # Deploy Lambda Function lambda-aro-get-full-team-profile
+      - echo "Deploy Lambda Function lambda-aro-get-full-team-profile ..."
+      - aws cloudformation deploy --template-file lambda-aro-get-full-team-profile.yaml --stack-name lambda-aro-get-full-team-profile --capabilities CAPABILITY_NAMED_IAM
+
+      # Deploy Lambda Function lambda-aro-get-full-user-profile
+      - echo "Deploy Lambda Function lambda-aro-get-full-user-profile ..."
+      - aws cloudformation deploy --template-file lambda-aro-get-full-user-profile.yaml --stack-name lambda-aro-get-full-user-profile--capabilities CAPABILITY_NAMED_IAM
+
+      # Deploy Lambda Function lambda-aro-get-gl-account
+      - echo "Deploy Lambda Function lambda-aro-get-gl-account ..."
+      - aws cloudformation deploy --template-file lambda-aro-get-gl-account.yaml --stack-name lambda-aro-get-gl-account--capabilities CAPABILITY_NAMED_IAM      
+
+      # Deploy Lambda Function lambda-aro-get-gl-line-items
+      - echo "Deploy Lambda Function lambda-aro-get-gl-line-items ..."
+      - aws cloudformation deploy --template-file lambda-aro-get-gl-line-items.yaml --stack-name lambda-aro-get-gl-line-items--capabilities CAPABILITY_NAMED_IAM
+
+      # Deploy Lambda Function lambda-aro-get-interest-rate
+      - echo "Deploy Lambda Function lambda-aro-get-interest-rate ..."
+      - aws cloudformation deploy --template-file lambda-aro-get-interest-rate.yaml --stack-name lambda-aro-get-interest-rate --capabilities CAPABILITY_NAMED_IAM
+
+      # Deploy Lambda Function lambda-aro-manage-cognito-user
+      - echo "Deploy Lambda Function lambda-aro-manage-cognito-user ..."
+      - aws cloudformation deploy --template-file lambda-aro-manage-cognito-user.yaml --stack-name lambda-aro-manage-cognito-user --capabilities CAPABILITY_NAMED_IAM
+
+      # Deploy Lambda Function lambda-aro-post-accounting-document
+      - echo "Deploy Lambda Function lambda-aro-post-accounting-document ..."
+      - aws cloudformation deploy --template-file lambda-aro-post-accounting-document.yaml --stack-name lambda-aro-post-accounting-document--capabilities CAPABILITY_NAMED_IAM
+
+      # Deploy Lambda Function lambda-aro-read-cash-flow-by-fiscal-year
+      - echo "Deploy Lambda Function lambda-aro-read-cash-flow-by-fiscal-year ..."
+      - aws cloudformation deploy --template-file lambda-aro-read-cash-flow-by-fiscal-year.yaml --stack-name lambda-aro-read-cash-flow-by-fiscal-year --capabilities CAPABILITY_NAMED_IAM
+
+      # Deploy Lambda Function lambda-get-api-method
+      - echo "Deploy Lambda Function lambda-get-api-method ..."
+      - aws cloudformation deploy --template-file lambda-get-api-method.yaml --stack-name lambda-get-api-method --capabilities CAPABILITY_NAMED_IAM
+
+      # Deploy Lambda Function lambda-get-inflation-rate
+      - echo "Deploy Lambda Function lambda-get-inflation-rate ..."
+      - aws cloudformation deploy --template-file lambda-get-inflation-rate.yaml --stack-name lambda-get-inflation-rate --capabilities CAPABILITY_NAMED_IAM
+
+      # Deploy Lambda Function lambda-user-access-profile
+      - echo "Deploy Lambda Function lambda-user-access-profile ..."
+      - aws cloudformation deploy --template-file lambda-user-access-profile.yaml --stack-name lambda-user-access-profile --capabilities CAPABILITY_NAMED_IAM
